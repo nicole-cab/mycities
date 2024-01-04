@@ -1,0 +1,12 @@
+.search-btn {
+    border: var(--secondary-color) solid 1px !important;
+    color: var(--secondary-color) !important;
+}
+.search-btn:hover {
+    background-color: var(--secondary-color) !important;
+    color: black !important;
+}
+
+form {
+    width: max-content !important;
+}

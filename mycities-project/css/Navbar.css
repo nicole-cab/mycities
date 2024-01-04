@@ -1,0 +1,11 @@
+.navbar-custom {
+    background-color: var(--secondary-color);
+    height: 4rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-items {
+    gap: 1rem;
+    align-items: center;
+}
