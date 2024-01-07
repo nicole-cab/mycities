@@ -1,5 +1,5 @@
 .navbar-custom {
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
     height: 4rem;
     justify-content: space-between;
     align-items: center;

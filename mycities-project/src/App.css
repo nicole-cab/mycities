@@ -15,12 +15,14 @@
 /* APP  */
 
 .app {
-  border: solid var(--secondary-color) 5px;
+  /* border: solid var(--secondary-color) 5px;
   border-radius: 1rem;
   width: 90vw;
   height: 90vh;
   margin-top: 5vh;
   margin-bottom: 5vh;
   margin-left: 5vw;
-  margin-right: 5vw;
+  margin-right: 5vw; */
+  width: 100vw;
+  height: 100vh;
 }

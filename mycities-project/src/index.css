@@ -5,7 +5,7 @@ html, body, * {
 }
 
 body {
-  background-color: var(--primary-color) !important;
+  background-color: var(--secondary-color) !important;
   position: absolute;
   top: 0;
   width: 100vw;
@@ -13,8 +13,8 @@ body {
 }
 
 :root {
-  --primary-color: #F38181;
-  --secondary-color: #FCE38A;
-  --accent-color: #EAFFD0;
-  --second-accent-color: #95E1D3;
+  --primary-color: #FFE7C1;
+  --secondary-color: #F3CCF3;
+  --accent-color: #E9A8F2;
+  --second-accent-color: #DC84F3;
 }

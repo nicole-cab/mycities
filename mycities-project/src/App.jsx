@@ -4,24 +4,36 @@ import SearchBar from "./components/SearchBar";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const [data, setData] = useState(null);
-  const hello = () => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
+  const [cityInfo, setCityInfo] = useState({});
+
+  const submit = (cityName) => {
+    console.log("submitted! " + cityName);
+
+    let formData = new FormData();
+    formData.append("cityName", cityName);
+
+    fetch("/city", {
+      body: formData,
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data["success"] == "true") {
+          setCityInfo({ ...cityInfo, lat: data["lat"], lon: data["lon"] });
+        }
+      })
+      .catch((error) => console.error(error));
   };
+
   return (
     <div className="app">
       <Navbar />
       <div className="p-5">
         <h1 className="text-center mb-4">My Cities Project</h1>
-        {/* <div>
-          <span>This is some test data </span>
-          <button onClick={hello}>Get data</button>
-          <p>{data}</p>
-        </div> */}
-        <SearchBar />
+        <SearchBar stateChanger={submit} />
         {/* <Content /> */}
+        <p>{JSON.stringify(cityInfo)}</p>
       </div>
     </div>
   );

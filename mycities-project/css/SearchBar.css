@@ -1,12 +1,16 @@
 .search-btn {
-    border: var(--secondary-color) solid 1px !important;
-    color: var(--secondary-color) !important;
+    background-color: none !important;
+    border: solid 2px var(--second-accent-color) !important;
+    color: var(--second-accent-color) !important;
+    transition: all .2s;
 }
 .search-btn:hover {
-    background-color: var(--secondary-color) !important;
+    background-color: var(--second-accent-color) !important;
     color: black !important;
 }
-
+.search-btn:active {
+    transform: translateY(-3px);
+}
 form {
     width: max-content !important;
 }
