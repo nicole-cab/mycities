@@ -1,0 +1,33 @@
+#search {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input_container {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.label {
+    font-size: 1.2rem;
+}
+
+.searchbar {
+    width: 20rem;
+    background-color: var(--white-color) !important;
+    outline: none;
+    border: solid var(--black-color) 0.1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.search_btn {
+    border-radius: 5rem;
+    width: min-content;
+    height: min-content;
+}
+
+.search_icon {
+    width: 2rem;
+}

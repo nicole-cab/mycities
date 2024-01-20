@@ -1,0 +1,17 @@
+.card {
+    background-color: var(--accent-color) !important;
+    color: var(--white-color) !important;
+}
+
+.card-header {
+    font-weight: 800 !important;
+}
+
+.app {
+    border: solid black 1px;
+    background-color: var(--primary-color);
+}
+
+.bg-transparent {
+    background-color: transparent !important;
+}
