@@ -1,9 +1,16 @@
 const https = require("https");
 
-const getWeatherDataByCityName = (cityName, countryCode, API_KEY) => {
-  const base = "api.openweathermap.org";
-  const path = "/data/2.5/weather?q=" + cityName + "&appid=" + API_KEY;
-  console.log("path: ", base + path);
+const getWeatherDataByCityName = (cityName, countryCode = "", API_KEY) => {
+  console.log("city2: ", cityName, countryCode);
+
+  // if the countryCode is provided added to the path
+  let path = "/data/2.5/weather?q=" + cityName;
+  if (countryCode !== "") {
+    path += "," + countryCode;
+  }
+  path += "&appid=" + API_KEY;
+
+  console.log("path: ", path);
 
   // use the openWeather API - get weather data by city name and optional country code
   const options = {

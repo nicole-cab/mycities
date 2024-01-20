@@ -9,6 +9,13 @@
     border-radius: 0.5rem;
 }
 
+.error_msg {
+    /* display: none; */
+    text-align: center;
+    padding-top: 1rem;
+    margin: 0;
+}
+
 .label {
     font-size: 1.2rem;
 }
