@@ -1,7 +1,7 @@
 server-node/node_modules
 server-node/.DS_Store
 server-node/config.json
-server-node/.env
 
 client-react/node_modules
 client-react/.DS_Store
+client-react/build

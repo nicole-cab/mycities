@@ -31,7 +31,7 @@ app.get("/hello", (req, res) => {
 });
 
 // set the port number
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 // ----------
 
