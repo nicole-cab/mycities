@@ -34,11 +34,12 @@ const appendToFile = (path, key, value) => {
     console.log("> File UPDATED successfully");
     return { success: true };
   } catch (error) {
-    console.log("An error has occurred ", error);
+    console.log(error);
     return { success: false };
   }
 };
 
 module.exports = {
   readFromFile,
+  appendToFile,
 };

@@ -1,19 +1,15 @@
-const { getWeatherDataByCityName } = require("../services/weather");
+const { getTimeDataByCityName } = require("../services/time");
 
-const getWeatherData = (req, res) => {
+const getTimeData = (req, res) => {
   // get the cityName
   const { cityName, countryCode } = req.query;
   console.log("city: ", cityName, countryCode);
 
   // if cityName does exists get weather data
   if (cityName) {
-    const resData = getWeatherDataByCityName(
-      cityName,
-      countryCode,
-      req.API_KEY
-    );
+    const resData = getTimeDataByCityName(cityName, countryCode, req.API_KEY);
     resData
-      .then((resData) => res.status(200).json(resData))
+      .then((resData) => res.status(200).json(JSON.parse(resData)))
       .catch((error) => {
         console.log("heeloo");
         console.log(error);
@@ -27,5 +23,5 @@ const getWeatherData = (req, res) => {
 };
 
 module.exports = {
-  getWeatherData,
+  getTimeData,
 };

@@ -8,6 +8,7 @@ const { readFromFile } = require("./utils/fileUtils.js");
 
 // import router modules
 const weather = require("./routers/weather.js");
+const time = require("./routers/time.js");
 
 // ----------
 
@@ -51,8 +52,13 @@ if (result.success) {
 
 // ---------- routes
 
-// weather route
-app.use("/api/weather", weather(openWeather_API_KEY));
+// only make routes available if the api keys are available
+if (apiNinjas_API_KEY && openWeather_API_KEY) {
+  // weather route
+  app.use("/api/weather", weather(openWeather_API_KEY));
+  // time route
+  app.use("/api/time", time(apiNinjas_API_KEY));
+}
 
 // ----------
 
