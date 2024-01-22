@@ -8,10 +8,39 @@
 }
 
 .app {
-    border: solid black 1px;
     background-color: var(--primary-color);
 }
 
 .bg-transparent {
     background-color: transparent !important;
 }
+
+/* container class and media queries */
+/*
+@media only screen and (max-width: 575px) {
+
+}
+
+@media only screen and (min-width: 576px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 992px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1400px) {
+
+}
+
+@media only screen and (min-width: 575px) {
+
+} */

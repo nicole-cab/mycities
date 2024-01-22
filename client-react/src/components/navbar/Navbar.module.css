@@ -11,46 +11,43 @@
     width: 1.5rem !important;
 }
 
-#nav_items_custom {
-    display: flex;
-    gap: 1rem;
-}
 .nav_item_custom, #btn_login {
     font-weight: 800;
     color: var(--accent-color);
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     background-color: transparent !important;
+    border-radius: 5rem;
 }
 
 .nav_item_custom {
-    border: none;
-}
-
-.nav_item_custom:hover {
-    color: #d63485cb;
-    border-bottom: solid #d63485cb 0.2rem;
-}
-
-.nav_item_custom:active {
-    color: var(--secondary-color);
-    border-bottom: solid var(--secondary-color) 0.2rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    border: solid transparent 0.2rem !important;
 }
 
 #btn_login {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
     border: solid var(--accent-color) 0.2rem !important;
-    border-radius: 5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
 }
 
-#btn_login:hover {
-    background-color: #d63485cb !important;
-    border: solid #d63485cb 0.2rem !important;
+.nav_item_custom:hover, #btn_login:hover {
     color: var(--white-color);
 }
 
-#btn_login:active {
+.nav_item_custom:hover {
+    background-color: #d63485cb !important;
+}
+
+#btn_login:hover {
+    background-color: var(--accent-color) !important;
+}
+
+.nav_item_custom:active, #btn_login:active  {
     background-color: var(--secondary-color) !important;
+}
+
+#btn_login:active {
     border: solid var(--secondary-color) 0.2rem !important;
 }

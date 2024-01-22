@@ -13,3 +13,9 @@
     --black-color: #1B1C1E;
     --white-color: #f5f5f5;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: var(--dark-color);
+}

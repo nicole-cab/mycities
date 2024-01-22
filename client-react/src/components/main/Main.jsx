@@ -13,13 +13,13 @@ function Main() {
   };
   return (
     <main className="bg-transparent">
-      <h1 className={`${styles.heading} text-center`}>
+      <h1 className={`${styles.heading} text-center mt-4 mt-sm-5`}>
         Learn more about a city!
       </h1>
       {/* fetch the city data */}
       <Search onDataFetched={handleDataFetched} />
       {/* send the city data to display */}
-      <Content data={fetchedData} />
+      {/* <Content data={fetchedData} /> */}
     </main>
   );
 }

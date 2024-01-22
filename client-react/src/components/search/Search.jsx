@@ -42,11 +42,12 @@ function Search({ onDataFetched }) {
   };
 
   return (
-    <div id={styles.search}>
-      <div className="d-flex flex-wrap justify-content-center align-items-center gap-5">
-        <div
-          className={`${styles.input_container} d-flex justify-content-center align-items-center gap-2`}
-        >
+    <div className="my-2" id={styles.search}>
+      <div className="d-flex mt-2" id={styles.search_form}>
+        <p className="text-danger" id={styles.error_msg}>
+          {errorMsg}
+        </p>
+        <div className={`${styles.input_container} w-75 d-flex p-2 rounded-3`}>
           <label htmlFor="cityName" className={styles.label}>
             City Name
           </label>
@@ -56,14 +57,12 @@ function Search({ onDataFetched }) {
             onChange={(e) => setCity({ ...city, cityName: e.target.value })}
             name="cityName"
             id="cityName"
-            className={styles.searchbar}
+            className={`${styles.searchbar} p-2 w-100 rounded-2`}
             placeholder="Please enter a city name"
           />
         </div>
 
-        <div
-          className={`${styles.input_container} d-flex justify-content-center align-items-center gap-2`}
-        >
+        <div className={`${styles.input_container} w-75 d-flex p-2 rounded-3`}>
           <label htmlFor="countryCode" className={styles.label}>
             Country Code
           </label>
@@ -73,19 +72,25 @@ function Search({ onDataFetched }) {
             onChange={(e) => setCity({ ...city, countryCode: e.target.value })}
             name="countryCode"
             id="countryCode"
-            className={styles.searchbar}
+            className={`${styles.searchbar} p-2 w-100 rounded-2`}
             placeholder="(optional)"
           />
         </div>
-        <button
-          type="submit"
-          onClick={fetchCityData}
-          className={`${styles.search_btn} btn btn-success d-flex justify-content-center align-items-center`}
+        <div
+          className="d-flex justify-content-end w-75"
+          id={styles.search_btn_container}
         >
-          <img src={searchIcon} alt="" className={styles.search_icon} />
-        </button>
+          <button
+            type="submit"
+            onClick={fetchCityData}
+            id={styles.search_btn}
+            className="btn btn-primary rounded-3 d-flex justify-content-center align-items-center gap-1"
+          >
+            <span>Search</span>
+            <img src={searchIcon} alt="search icon" id={styles.search_icon} />
+          </button>
+        </div>
       </div>
-      <p className={`${styles.error_msg} text-danger`}>{errorMsg}</p>
     </div>
   );
 }
