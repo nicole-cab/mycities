@@ -1,9 +1,10 @@
 #search_form {
     /* width: max-content; */
+    /* background-color: var(--secondary-color); */
 }
 
-.input_container {
-    background-color: var(--secondary-color);
+.input_container > * {
+    font-weight: bold;
 }
 
 #error_msg {
@@ -11,21 +12,30 @@
     text-align: center;
     padding-top: 1rem;
     margin: 0;
+    height: 1.5rem;
+    color: red;
+    font-weight: 400 !important;
 }
 
 .searchbar {
-    background-color: var(--white-color) !important;
+    /* color: var(--white-color) !important; */
+    background-color: var(--secondary-color) !important;
     outline: none;
     border: solid var(--black-color) 0.1rem;
+}
+
+.searchbar::placeholder {
+    color: var(--white-color) !important;
 }
 
 #search_btn {
     border-radius: 5rem;
     width: min-content;
     height: min-content;
+    border: solid var(--black-color) 0.1rem;
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 767px) {
     #search_form {
         flex-direction: column;
         align-items: center;
@@ -37,39 +47,38 @@
     }
     .input_container, #search_btn_container {
         max-width: 20rem;
+        width: 75%;
     }
     #search_btn{
         width: fit-content;
     }
-    .input_container > *{
-        font-size: 1rem !important;
+    #search_icon {
+        width: 1rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #search_form {
+        justify-content: space-between;
+        align-items: end;
+        gap: 1rem;
+    }
+    .input_container {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        max-width: 30rem;
+    }
+    #search_btn_container {
+        width: fit-content;
     }
     #search_icon {
         width: 1rem;
     }
-    #error_msg{}
-}
-
-@media only screen and (min-width: 576px) {
-
-}
-
-@media only screen and (min-width: 768px) {
-
-}
-
-@media only screen and (min-width: 992px) {
-
-}
-
-@media only screen and (min-width: 1200px) {
-
 }
 
 @media only screen and (min-width: 1400px) {
-
-}
-
-@media only screen and (min-width: 575px) {
-
+    #search_form {
+        justify-content: center;
+    }
 }

@@ -10,7 +10,7 @@ function Search({ onDataFetched }) {
     // if city name not provided
     if (city.cityName === "") {
       console.log("city name not provided");
-      setErrorMsg("Please provide a city name");
+      setErrorMsg("Please provide a city name!");
       return;
     } else {
       setErrorMsg(""); // remove error msg
@@ -43,11 +43,11 @@ function Search({ onDataFetched }) {
 
   return (
     <div className="my-2" id={styles.search}>
-      <div className="d-flex mt-2" id={styles.search_form}>
-        <p className="text-danger" id={styles.error_msg}>
-          {errorMsg}
-        </p>
-        <div className={`${styles.input_container} w-75 d-flex p-2 rounded-3`}>
+      <div className="d-flex mt-2 px-md-5" id={styles.search_form}>
+        <div className={`${styles.input_container} d-flex p-2`}>
+          <p className="text-start p-0 m-0" id={styles.error_msg}>
+            {errorMsg}
+          </p>
           <label htmlFor="cityName" className={styles.label}>
             City Name
           </label>
@@ -62,7 +62,7 @@ function Search({ onDataFetched }) {
           />
         </div>
 
-        <div className={`${styles.input_container} w-75 d-flex p-2 rounded-3`}>
+        <div className={`${styles.input_container} d-flex p-2`}>
           <label htmlFor="countryCode" className={styles.label}>
             Country Code
           </label>
@@ -77,17 +77,17 @@ function Search({ onDataFetched }) {
           />
         </div>
         <div
-          className="d-flex justify-content-end w-75"
+          className="d-flex justify-content-end p-2"
           id={styles.search_btn_container}
         >
           <button
             type="submit"
             onClick={fetchCityData}
             id={styles.search_btn}
-            className="btn btn-primary rounded-3 d-flex justify-content-center align-items-center gap-1"
+            className="btn btn-primary p-2 rounded-2 d-flex justify-content-center align-items-center gap-1"
           >
-            <span>Search</span>
             <img src={searchIcon} alt="search icon" id={styles.search_icon} />
+            <span>Search</span>
           </button>
         </div>
       </div>
