@@ -22,8 +22,6 @@ async function axiosApiReq(config) {
 }
 
 function handleStatusCodes(error) {
-  console.log("handle error: ", error);
-
   if (error.response.status === 404) {
     console.error("404 NOT FOUND");
   } else if (error.response.status === 401) {
@@ -38,6 +36,7 @@ function handleStatusCodes(error) {
     console.error("OTHER WEATHER API ERROR");
   }
 
+  console.log("handle status codes: ", error);
   console.error("API ERROR: ", error.message);
 }
 

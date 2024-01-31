@@ -20,7 +20,7 @@ const getWeather = async (cityName, countryCode, API_KEY) => {
     // handle successful response (received data from api)
     console.log("services true");
 
-    // extract data and write to cityInfo.json
+    // extract data
     const extractedData = {
       weather: {
         main: response.data.weather[0].main,

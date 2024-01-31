@@ -1,45 +1,43 @@
-const time = require("../routers/time");
-const httpsRequest = require("../utils/httpsRequests");
+const axiosApiReq = require("../utils/axios");
 
-const getTimeDataByCityName = (cityName, countryCode = "", API_KEY) => {
-  console.log("city2: ", cityName, countryCode);
-
-  // if the countryCode is provided added to the path
-  let path = "/v1/worldtime?city=" + cityName;
-
-  //   if (countryCode !== "") {
-  //     path += "," + countryCode;
-  //   }
-  //   path += "&appid=" + API_KEY;
-
-  console.log("path: ", path);
-
-  // use the openWeather API - get weather data by city name and optional country code
-  const options = {
-    hostname: "api.api-ninjas.com",
-    port: 443,
-    path: path,
+const getTime = async (cityName, countryCode, API_KEY) => {
+  // custom config
+  const config = {
+    method: "get",
+    url:
+      "https://api.api-ninjas.com/v1/worldtime?city=" +
+      cityName +
+      "&country=" +
+      countryCode,
     headers: {
       "X-Api-Key": API_KEY,
     },
   };
 
-  const promise = httpsRequest(options);
+  // make API request
+  const response = await axiosApiReq(config);
+  if (response.success) {
+    // handle successful response (received data from api)
+    console.log("services true");
 
-  promise
-    .then((response) => JSON.parse(response))
-    .then((data) => {
-      console.log(data);
-      // gets the current time given a timezone
-      const timezone = data.timezone;
-      let date_string = new Date().toLocaleString("en-UK", {
-        timeZone: timezone,
-      });
-      console.log("data string: ", date_string);
-    })
-    .catch((error) => console.log(error));
+    // get the current time locally given a timezone
+    const timezone = response.data.timezone;
+    let date_string = new Date().toLocaleString("en-UK", {
+      timeZone: timezone,
+    });
 
-  return promise;
+    // extract data
+    const extractedData = {
+      datetime: date_string,
+      timezone: response.data.timezone,
+      day_of_week: response.data.day_of_week,
+    };
+
+    return { success: true, extractedData: extractedData };
+  } else {
+    console.log("services false");
+    return { success: false, error: response.error };
+  }
 };
 
-module.exports = { getTimeDataByCityName };
+module.exports = { getTime };

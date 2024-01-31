@@ -14,32 +14,6 @@ const readFromFile = (path, key) => {
   }
 };
 
-const appendToFile = (path, key, value) => {
-  // create file if it doesn't already exist and add the city info
-  try {
-    let json;
-    // read the json file if it exists or else create one
-    if (fs.existsSync(path)) {
-      json = fs.readFileSync(path);
-      json = JSON.parse(json);
-    } else {
-      json = {};
-    }
-
-    // append new key-value pair
-    json[key] = value;
-
-    // update json with new key-value pair
-    fs.writeFileSync(path, JSON.stringify(json), "utf8");
-    console.log("> File UPDATED successfully");
-    return { success: true };
-  } catch (error) {
-    console.log(error);
-    return { success: false };
-  }
-};
-
 module.exports = {
   readFromFile,
-  appendToFile,
 };
