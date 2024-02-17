@@ -16,6 +16,7 @@ A full-stack web app that retrieves and displays city information such as weathe
 ## Project Status
 
 This project is currently in development.
+<br>
 **STATUS:** Front End In Progress.
 
 The Backend is complete. It creates multiple API requests to different public APIs that return city-related data. The different data is then extracted and compiled into a unified JSON response to the client.
